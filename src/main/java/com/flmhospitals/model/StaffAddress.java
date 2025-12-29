@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,13 +16,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class StaffAddress {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long staffAddressId;
 
-    private String street;
+    private String landmark;
 
     private String city;
 
@@ -31,9 +33,9 @@ public class StaffAddress {
 
     private String pinCode;
 
-	public StaffAddress(String street, String city, String state, String country, String pinCode) {
+	public StaffAddress(String landmark, String city, String state, String country, String pinCode) {
 		super();
-		this.street = street;
+		this.landmark = landmark;
 		this.city = city;
 		this.state = state;
 		this.country = country;
